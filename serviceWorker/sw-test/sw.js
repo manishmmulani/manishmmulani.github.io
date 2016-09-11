@@ -2,15 +2,15 @@ this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/sw-test/',
-        '/sw-test/index.html',
-        '/sw-test/style.css',
-        '/sw-test/app.js',
-        '/sw-test/image-list.js',
-        '/sw-test/star-wars-logo.jpg',
-        '/sw-test/gallery/bountyHunters.jpg',
-        '/sw-test/gallery/myLittleVader.jpg',
-        '/sw-test/gallery/snowTroopers.jpg'
+        '/serviceWorker/sw-test/',
+        '/serviceWorker/sw-test/index.html',
+        '/serviceWorker/sw-test/style.css',
+        '/serviceWorker/sw-test/app.js',
+        '/serviceWorker/sw-test/image-list.js',
+        '/serviceWorker/sw-test/star-wars-logo.jpg',
+        '/serviceWorker/sw-test/gallery/bountyHunters.jpg',
+        '/serviceWorker/sw-test/gallery/myLittleVader.jpg',
+        '/serviceWorker/sw-test/gallery/snowTroopers.jpg'
       ]);
     })
   );
@@ -39,7 +39,7 @@ this.addEventListener('fetch', function(event) {
 
       .catch(function() {
         console.log("Returning default object as error occurred while obtained object from cache " + event.request);
-        return caches.match('/sw-test/gallery/myLittleVader.jpg');
+        return caches.match('/serviceWorker/sw-test/gallery/myLittleVader.jpg');
       })
   );
 });
